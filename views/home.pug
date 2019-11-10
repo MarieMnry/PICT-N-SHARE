@@ -1,0 +1,31 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+  link(rel='stylesheet' href='public/css/style.css')
+  script(src='script.js')
+  title PICT'N'Share - Social Media
+
+nav.navbar.navbar-expand-xl.navbar-dark.bg-dark
+  a.navbar-brand(href='#')
+    img.d-inline-block.align-top(src='public/img/logophotoshop.png' width='30' height='30' alt='logo')
+    | PICT'N'SHARE
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse.justify-content-end
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='signup') S'inscrire
+      li.nav-item.active
+        a.nav-link(href='login') Se connecter
+          span.sr-only (current)
+
+h1 Bienvenue dans votre communauté parisienne de photographie !
+#slide
+  img(src='/public/img/IMG_1585.jpg' alt='img1')
+  //- img(src='public/img/IMG_1630.jpg' alt='img2')
+  //- img(src='/public/img/IMG_2782.jpg' alt='img3')

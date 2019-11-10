@@ -1,0 +1,159 @@
+body{
+    background-image: radial-gradient(circle at center, white, grey, black);
+}
+
+/******** NAVBAR ********/
+.navbar-dark .navbar-nav .active .nav-link {
+    margin-right: 100px;
+    border: 1px solid #fcfc9c;
+    border-radius: 5px;
+}
+.navbar-dark .navbar-nav .active .nav-link:hover {
+    background-color: grey;
+}
+.navbar-dark .navbar-nav .nav-link a:hover {
+    background-color: grey;
+}
+.navbar-dark .navbar-nav .nav-link {
+    margin-right: 15px;
+}
+h1 {
+    width: 30%;
+    margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 100px;
+    display: inline-block;
+    color: ghostwhite;
+}
+/***** CARROUSEL *****/
+#slide {
+    border: 2px black solid;
+    width: 45%;
+    margin-top: 80px;
+    display: inline-block;
+}
+#slide img {
+    width: 100%;
+}
+
+/***** FORMS *****/
+#logo{
+    width: 10%;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#logo img {
+    width: 100%;
+    border-radius: 25px;
+}
+#titreLogin, #titreSignup {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%
+}
+.form {
+    width: 30%;
+    margin: auto;
+    background-color: ghostwhite;
+    font-size: 0.9em;
+    border-radius: 5px 40px;
+    padding: 10px 0px 2px 0px;
+}
+.form-group {
+    padding: 0;
+    margin: 0;
+}
+.form label {
+    margin:10px 10% 0% 10%;
+}
+.form input, .btn {
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+.form small {
+    width: 100%;
+    margin: -2 10% 1px 10%;
+    font-size: 0.8em;
+}
+.btn {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.form input {
+    margin-bottom: 5px; 
+}
+.dropdown-divider {
+    border-top: black 1px solid;
+    margin-left: 2.8em;
+    margin-right: 2.8em;
+}
+.form-lien p, .form-lien a {
+    text-align: center;
+}
+input:valid {
+    border: 2px solid green;
+}
+/* input:invalid {
+    border: 1px solid red;
+} */
+
+/***** RESPONSIVE *****/
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 400px) {
+    /*Page HOME*/
+    .form {
+        width: 80%;
+        margin-left: 20px;
+        padding: 0px;
+    }
+    h1{
+        font-size: 1.5em;
+        width: 90%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }
+    #slide {
+        width: 60%;
+        margin: auto;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-link:focus {
+        background-color: burlywood;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .form {
+        width: 80%;
+        margin: auto;
+    }
+    .form label {
+        margin-left: 45px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+
+
+
+
+

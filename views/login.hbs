@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='public/css/style.css'>
+  <script src='public/js/script.js'></script>
+  <title>PICT'N'Share - Social Media</title>
+</head>
+
+<body>
+  <div id="logo">
+    <img src="/public/img/logophotoshop.png" alt="logo">
+  </div>
+  <h3 id="titreLogin">Heureux de vous revoir !</h3>
+
+    <form class="form" action="/login" method="post">
+    <div class= "form_input">
+      <label for= "inputLogin" >Pseudo : (5 à 15 caractères)</label>
+      <input name="login" type= "text" class= "form-control" id="inputLogin" required="" pattern="[A-Za-z0-9]{5,15}"  placeholder="Ex: Emmanuel Macron" >
+    </div>
+    <div class="form-group"><label for="inputPassword">Mot de passe : (6 caractères minimum)</label><input name="password" type="password" class="form-control" id= "inputPassword" required="" minlength="6" placeholder= "Password" ></div>
+    <button type="submit" class="btn btn-dark" >Me connecter</button>
+    <div class="dropdown-divider"></div>
+    <div class="form-lien"><p>Nouveau sur Pict'N'Share ?
+      <a href="signup"> S'inscrire</a></p>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-lien"><p>
+      <a href="checkpoint">Mot de passe perdu ?</a></p>
+    </div>
+  </form> 
+  
+</body>
+
