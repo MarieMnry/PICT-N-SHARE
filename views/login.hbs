@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <h4 class="mssgInformation">{{message}}</h4>
   <div id="logo">
     <img src="/public/img/logophotoshop.png" alt="logo">
   </div>
@@ -21,7 +22,7 @@
     <form class="form" action="/login" method="post">
     <div class= "form_input">
       <label for= "inputLogin" >Pseudo : (5 à 15 caractères)</label>
-      <input name="login" type= "text" class= "form-control" id="inputLogin" required="" pattern="[A-Za-z0-9]{5,15}"  placeholder="Ex: Emmanuel Macron" >
+      <input name="login" type= "text" class= "form-control" id="inputLogin" required="" pattern="[A-Za-z0-9]{5,15}" placeholder="Ex: Emmanuel Macron" >
     </div>
     <div class="form-group"><label for="inputPassword">Mot de passe : (6 caractères minimum)</label><input name="password" type="password" class="form-control" id= "inputPassword" required="" minlength="6" placeholder= "Password" ></div>
     <button type="submit" class="btn btn-dark" >Me connecter</button>
@@ -36,4 +37,5 @@
   </form> 
   
 </body>
+</html> 
 

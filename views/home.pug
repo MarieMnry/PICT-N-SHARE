@@ -7,7 +7,7 @@ head
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
   link(rel='stylesheet' href='public/css/style.css')
-  script(src='script.js')
+  //- script(src='public/js/"script.js')
   title PICT'N'Share - Social Media
 
 nav.navbar.navbar-expand-xl.navbar-dark.bg-dark
@@ -23,7 +23,8 @@ nav.navbar.navbar-expand-xl.navbar-dark.bg-dark
       li.nav-item.active
         a.nav-link(href='login') Se connecter
           span.sr-only (current)
-
+if message 
+  p.mssgInformation= message
 h1 Bienvenue dans votre communauté parisienne de photographie !
 #slide
   img(src='/public/img/IMG_1585.jpg' alt='img1')

@@ -97,10 +97,14 @@ h1 {
 input:valid {
     border: 2px solid green;
 }
-/* input:invalid {
-    border: 1px solid red;
-} */
 
+.mssgInformation {
+    margin: auto;
+    color: #fcfc9c;
+    border-bottom: white 1px dotted;
+    font-size: 1.2em;
+    text-align: center;
+}
 /***** RESPONSIVE *****/
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 400px) {

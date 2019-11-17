@@ -12,28 +12,34 @@
 </head>
 
 <body>
+  <h4 class="mssgInformation">{{message}}</h4>
   <div id="logo">
     <img src="/public/img/logophotoshop.png" alt="logo">
   </div>
   <h3 id="titreSignup">Profitez pleinement de Paris !</h3>
-  
-  <form class="form" action="" method="post">
 
+  <form class="form" action="" method="post">
     <div class= "form-group">
       <label for= "inputEmail" >Email :</label><input name="email" type= "email" class= "form-control" id="inputEmail" required="" placeholder="e.macron@gmail.com">
       <small id= "inputHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec qui que ce soit.</small>
     </div>
+
     <div class= "form-group">
       <label for= "inputLogin" >Pseudo : (5 à 15 caractères)</label>
-      <input name="login" type="text" class="form-control" id="inputLogin" required=""  placeholder="Ex: Emmanuel Macron">
+      <input name="login" type="text" class="form-control" id="inputLogin" required="" pattern="[A-Za-z0-9]{5,15}"placeholder="Ex: Emmanuel Macron">
     </div>
-    <div class="form-group"><label for="inputPassword">Mot de passe : (6 caractères minimum)</label><input name="password" type="password" class="form-control" id= "inputPassword" required="" minlength="6" placeholder= "Password">
+
+  <div class="form-group"><label for="inputPassword">Mot de passe : (6 caractères minimum)</label><input name="password" type="password" class="form-control" id= "inputPassword" required="" minlength="6" placeholder= "Password">
     </div>
+
+    <div class="form-group"><label for="inputPasswordBis">Saisissez à nouveau votre mot de passe :</label><input name="passwordBis" type="password" class="form-control" id= "inputPasswordBis" required="" minlength="6" placeholder= "Password">
+    </div>
+
     <button type="submit" class="btn btn-dark" >M'inscrire</button>
     <div class="dropdown-divider"></div>
     <div class="form-lien"><p>Déjà inscrit(e) ?
       <a href="login"> S'identifier</a></p>
     </div>
-  </form> 
-  
+  </form>
 </body>
+</html> 

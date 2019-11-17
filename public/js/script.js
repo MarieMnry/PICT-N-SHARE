@@ -1,5 +1,5 @@
 'use strict';
 
-// window.onload = function(){
-//     console.log('coucou from script')
-// }
+window.onload = function(){
+    console.log('coucou au client from public/js/script.js');
+}
