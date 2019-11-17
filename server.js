@@ -49,7 +49,7 @@ app.use(sessionMiddleware);
 //ici declaration variable io = socket.listen...
 
 ///// PORT
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 
 ///// FAVICON
 app.use(favicon(__dirname + '/public/img/logophotoshop.png'));
