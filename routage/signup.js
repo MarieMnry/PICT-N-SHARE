@@ -40,9 +40,11 @@ router.post('/', function(req, res){
                     } else {
                         users.insertOne({ login, password, email});
                         console.log("1 document inserted");
-                        client.close(function(){
-                            console.log('J\'ai fais mon boulot ! BdD refermée');
-                        });
+                        req.session.login = login;
+                        req.session.email = email;
+                        console.log('from login :' + req.session.login);
+                        res.redirect('homepage');
+                        
                         // Envoi d'un mail de confirmation d'inscription
                         var mailOptions = {
                         from: '"Admin" <pictnshare@gmail.com>',
@@ -62,9 +64,10 @@ router.post('/', function(req, res){
                         console.log('Message sent');
                         });
                         transporter.close();
-    
-                        res.redirect('homepage');
                     }
+                    client.close(function(){
+                        console.log('J\'ai fais mon boulot ! BdD refermée');
+                    });
                 }
             });
         }

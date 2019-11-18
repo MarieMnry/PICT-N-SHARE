@@ -71,7 +71,7 @@ app.use('/checkpoint', checkpoint);
 // Code ok fonctionnel pour la restriction
 app.use(function restrict (req, res, next){
     if(req.session.login){
-        console.log(req.session);
+        console.log('from server :' + req.session);
         res.render('homepage');
     } else {
         console.log('Access denied');
