@@ -43,7 +43,7 @@ router.post('/', function(req, res){
                         req.session.login = login;
                         req.session.email = email;
                         console.log('from login :' + req.session.login);
-                        res.redirect('homepage');
+                        res.redirect('profil');
                         
                         // Envoi d'un mail de confirmation d'inscription
                         var mailOptions = {

@@ -61,22 +61,24 @@ app.set('view engine', 'hbs');
 app.use('/public', express.static(join(__dirname, 'public')));
 
 ///// ROUTES
-const { home, signup, login, checkpoint, homepage } = require('./routage/index');
+const { home, signup, login, checkpoint, profil, logout } = require('./routage/index');
 
 app.use('/', home);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/checkpoint', checkpoint);
-// app.use('/homepage', homepage);
-// Code ok fonctionnel pour la restriction
-app.use(function restrict (req, res, next){
-    if(req.session.login){
-        console.log('from server :' + req.session);
-        res.render('homepage');
-    } else {
-        console.log('Access denied');
-        res.render('home.pug', { message: "Merci de vous identifier !"});
-    }
+app.use('/profil', profil);
+app.use('/logout', logout);
+
+app.get('/ajax', function(req, res){
+    res.render('ajax.pug', {title: 'Un exemple AJAX'})
+});
+
+///// BOX
+let box;
+app.use(function(req, res, next){
+    box = {};
+    next();
 });
 
 /////DB

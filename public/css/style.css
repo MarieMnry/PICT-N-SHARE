@@ -4,7 +4,7 @@ body{
 
 /******** NAVBAR ********/
 .navbar-dark .navbar-nav .active .nav-link {
-    margin-right: 100px;
+    /* margin-right: 100px; */
     border: 1px solid #fcfc9c;
     border-radius: 5px;
 }
@@ -16,6 +16,12 @@ body{
 }
 .navbar-dark .navbar-nav .nav-link {
     margin-right: 15px;
+}
+/** PAGE HOMEPAGE **/
+.nav-item, .form-inline  {
+    margin-right: 25px;
+    margin-left: 40px;
+    padding: 0px;
 }
 h1 {
     width: 30%;

@@ -3,10 +3,10 @@
 const express = require('express');
 const router = express.Router();
 
-let box = {};
+var box = {};
 
 router.get('/', function(req, res, next){
-    res.render('login');
+    res.render('login', box);
     box.session = req.session;
 })
 
@@ -35,8 +35,9 @@ router.post('/', function(req, res){
                 } else {
                     console.log('User trouvé dans la BdD : ' + result[0].login);
                     req.session.login = result[0].login;
+                    req.session.email = result[0].email;
                     // if()
-                    res.redirect('homepage');
+                    res.redirect('profil');
                 }
                 client.close(function(){
                     console.log('J\'ai fais mon boulot ! BdD refermée');
