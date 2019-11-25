@@ -7,7 +7,7 @@ let box = {};
 const {nodemailer, transporter} = require('../mailer.js');
 
 router.get('/', function(req, res, next){
-    res.render('signup');
+    res.render('signup.hbs');
     box.session = req.session;
 })
 
@@ -32,10 +32,10 @@ router.post('/', function(req, res){
                     throw err;
                 } else {
                     if(result.length !== 0){
-                        res.render('signup', {message: "Oops ce login est déjà pris ! Allez, trouves-en un mieux."});
+                        res.render('signup.hbs', {message: "Oops ce login est déjà pris ! Allez, trouves-en un mieux."});
                         console.log("Same login, choose another one !");
                     }else if(password !== passwordBis){
-                        res.render('signup', {message: "Tes mots de passe ne correspondent pas ! Je t'invite à recommencer."});
+                        res.render('signup.hbs', {message: "Tes mots de passe ne correspondent pas ! Je t'invite à recommencer."});
                         console.log("Not same passwords");
                     } else {
                         users.insertOne({ login, password, email});

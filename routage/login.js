@@ -30,7 +30,7 @@ router.post('/', function(req, res){
             db.collection('users').find({login, password}).toArray(function(err, result) {
                 if (err) throw err;
                 if(result.length === 0) {
-                    res.render('login', {message: 'Saisie invalide. Tu sembles inconnu au bataillon !'});
+                    res.render('login.hbs', {message: 'Saisie invalide. Tu sembles inconnu au bataillon !'});
                     console.log('Oops ! Pas trouvé !');
                 } else {
                     console.log('User trouvé dans la BdD : ' + result[0].login);

@@ -51,8 +51,6 @@ const sessionMiddleware = session({
 })
 app.use(sessionMiddleware);
 
-
-
 ///// FAVICON
 app.use(favicon(__dirname + '/public/img/logophotoshop.png'));
 
@@ -64,15 +62,15 @@ app.use('/public', express.static(join(__dirname, 'public')));
 app.use(cookieParser());
 
 ///// ROUTES
-const { home, signup, login, checkpoint, profil, chat } = require('./routage/index');
-
+const { home, signup, login, checkpoint, profil, chat, plan, dashboard } = require('./routage/index');
 app.use('/', home);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/checkpoint', checkpoint);
 app.use('/profil', profil);
 app.use('/chat', chat);
-
+app.use('/plan', plan);
+app.use('/dashboard', dashboard);
 
 app.get('/ajax', function(req, res){
     res.render('ajax.pug', {title: 'Un exemple AJAX'})
@@ -87,10 +85,17 @@ app.use(function(req, res, next){
 
 ///// WEBSOCKETS
 io.on('connection', function(socket){ 
-    console.log('a user connected');
+    var clientIp = socket.request.connection.remoteAddress;
+    console.log('user connected :' + clientIp);
     socket.on('disconnect', function(){
         console.log('user disconnected');
     }); 
+
+    
+    socket.on('chatMessage', function(message){
+        console.log('message :' + message.text);
+        io.emit('chatMessage', message);
+    });
 }); 
 
 /////DB
@@ -103,7 +108,7 @@ MongoClient.connect(mongoUri, {
         return;
     }
     mongoClient = client.db('pictnshare');
-    app.listen(port, function(){
+    server.listen(port, function(){
         console.log('listening on :' + port)
     })
 })

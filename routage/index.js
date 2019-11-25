@@ -4,6 +4,8 @@ const login = require('./login');
 const checkpoint = require('./checkpoint');
 const profil = require('./profil');
 const chat = require('./chat');
+const plan = require('./plan');
+const dashboard = require('./dashboard');
 
 module.exports = { 
     home,
@@ -12,4 +14,6 @@ module.exports = {
     checkpoint,
     profil,
     chat,
+    plan,
+    dashboard,
 }
