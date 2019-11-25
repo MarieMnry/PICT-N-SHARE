@@ -7,13 +7,13 @@ head
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
   link(rel='stylesheet' href='public/css/style.css')
-  //- script(src='public/js/"script.js')
+  script(src='public/js/"script.js')
   title PICT'N'Share - Social Media
 
 body
 nav.navbar.navbar-expand-xl.navbar-dark.bg-dark
   a.navbar-brand(href='#')
-    img.d-inline-block.align-top(src='public/img/logophotoshop.png' width='30' height='30' alt='logo')
+    img.d-inline-block.align-top(src='public/img/logophotoshop.png' width='35' height='35' alt='logo')
     |  PICT'N'SHARE
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
@@ -26,8 +26,39 @@ nav.navbar.navbar-expand-xl.navbar-dark.bg-dark
           span.sr-only (current)
 if message 
   p.mssgInformation= message
-h1 Bienvenue dans votre communauté parisienne de photographie !
-#slide
-  img(src='public/img/IMG_1585.JPG' alt='img1')
-  //- img(src='public/img/IMG_1630.JPG' alt='img2')
-  //- img(src='/public/img/IMG_2782.JPG' alt='img3')
+
+#textAccueil
+  p Bienvenue sur le réseau social
+
+.carrousel
+  #carouselExampleCaptions.carousel.slide(data-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-target='#carouselExampleCaptions' data-slide-to='0')
+      li(data-target='#carouselExampleCaptions' data-slide-to='1')
+      li(data-target='#carouselExampleCaptions' data-slide-to='2')
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src='public/img/IMG_0809.JPG' alt='1')
+        .carousel-caption.d-none.d-md-block
+          //- h5 First slide label
+          p.legend Arc de Triomphe, Place Charles de Gaulle, 75008 Paris. Février 2018
+      .carousel-item
+        img.d-block.w-100(src='public/img/IMG_2782.JPG' alt='2')
+        .carousel-caption.d-none.d-md-block
+          //- h5 Second slide label
+          p.legend La Terrasse, Galeries Lafayette Paris Haussmann, 75009 Paris. Décembre 2018.
+      .carousel-item
+        img.d-block.w-100(src='public/img/IMG_1630.JPG' alt='3')
+        .carousel-caption.d-none.d-md-block
+          //- h5 Third slide label
+          p.legend Basilique du Sacré-Coeur, Montmartre 75018 Paris. Avril 2018.
+    a.carousel-control-prev(href='#carouselExampleCaptions' role='button' data-slide='prev')
+      span#fleche.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carouselExampleCaptions' role='button' data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
+
+#textAccueil
+  p Réservé à la photographie sur Paris
+

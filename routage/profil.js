@@ -9,7 +9,7 @@ var box = {};
 
 router.get('/', function(req, res, next){
     if(req.session.login){
-        res.render("profil", {pseudo: req.session.login});
+        res.render("profil.hbs", {login: req.session.login, email: req.session.email});
         box.session = req.session;
         console.log("from profil: " + box.session.login + box.session.email);
 
@@ -18,6 +18,12 @@ router.get('/', function(req, res, next){
         res.render("home.pug", { message: "Merci de vous identifier !"});
     }
 });
+
+router.post('/', function(req, res, next){
+    if(req.xhr){
+        console.log('youhou AJAX');
+    }
+})
 
 
 module.exports = router;

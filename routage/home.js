@@ -10,9 +10,12 @@ router.get('/', function(req, res, next){
     // box.h1 = 'hello je suis le h1';
     console.log('from home: ' + box.session.login);
 
-    // if(req.session){
-    //     //on detruit la session
-    // }
+    if(req.session.login){
+        req.session.destroy(function(err){
+            console.log('session detruite')
+        });
+        //on detruit la session
+    }
 });
 
 module.exports = router;

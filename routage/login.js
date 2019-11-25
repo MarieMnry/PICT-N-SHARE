@@ -6,7 +6,7 @@ const router = express.Router();
 var box = {};
 
 router.get('/', function(req, res, next){
-    res.render('login', box);
+    res.render('login.hbs', box);
     box.session = req.session;
 })
 

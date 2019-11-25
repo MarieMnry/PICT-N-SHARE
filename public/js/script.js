@@ -1,22 +1,35 @@
 'use strict';
+const socket = io();
+
 
 window.onload = function(){
     console.log('coucou au client from public/js/script.js');
-
+    
     document.getElementById('btnLogout').onclick = function(){
-        confirm('Vous allez être déconnecté !');
+        
+        if(confirm('Vous allez être déconnecté !')){
+            document.location.href="/"
+        } else {
+            console.log('on reste')
+        };
     };
-
-
-
-    // AJAX TEST
-    // var request = new XMLHttpRequest();
-    // request.onreadystatechange = function(){
-    //     if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
-    //         var response = JSON.parse(this.responseText);
-    //         console.log(response.current_condition.condition);
-    //     }
-    // }
-    // request.open("GET", "http://localhost:8080/profil");
-    // request.send();
+    
 }
+
+
+
+    // $("#myForm").submit(function(e){
+    //     e.preventDefault();
+
+    //     var donnees = $(this).serialize();
+
+    //     $.ajax({
+    //         type: 'post',
+    //         url: '/profil',
+    //         async: true,
+    //         data: donnees,
+    //         success: function(data){
+    //             console.log(donnees);
+    //         },
+    //     });
+    // })

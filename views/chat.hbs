@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script type="text/script" src='/socket.io/socket.io.js'></script>
+  <script src='public/js/script.js'></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='public/css/style.css'>
+  
+  <title>PICT'N'Share - Social Media</title>
+</head>
+
+<body>
+{{!---- NAVBAR ----}}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="public/img/logophotoshop.png" width="30" height="30" class="d-inline-block align-top" alt="">PICT'N'SHARE
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Accueil</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/chat">Chat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Plan Paris</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/profil" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon profil : {{login}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Modifier mon mot de passe</a>
+            <a class="dropdown-item" id="btnLogout" href="#">Déconnexion</a>
+          </div>
+        </li>
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn-outline-success" type="submit">Search</button>
+        </form>
+      </ul>
+    </div>
+  </nav>
+
+{{!---- PAGE CHAT CONTENT ----}}
+<h1>Pict'N'Chat</h1>
+<h3>{{login}}</h3>
+  <div id="chatContent">
+    <ul id="mssgBox"></ul>
+    <form action="#" method="post">
+        <input type="text" name="input" id="mssgInput">
+        <button type="submit" name="submit" id="mssgSubmit">Envoyer</button>
+    </form>
+  </div>
+
+</body>
+</html>

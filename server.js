@@ -8,7 +8,7 @@ const { join } = require('path');
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-//ici socket.io
+const socketio = require('socket.io');
 const bodyParser = require('body-parser');
 const favicon = require('express-favicon');
 const path = require('path');
@@ -23,6 +23,10 @@ const db = require('./db');
 ///// SERVER
 const app = express();
 const server = http.createServer(app);
+var io = socketio.listen(server);
+
+///// PORT
+const port = process.env.PORT || 8080;
 
 ///// DATABASE
 const mongoUri = process.env.mongoUri || 'mongodb+srv://marie:Architecture2018@pictcluster-5bvau.mongodb.net/test?retryWrites=true&w=majority';
@@ -46,29 +50,29 @@ const sessionMiddleware = session({
     })
 })
 app.use(sessionMiddleware);
-//ici declaration variable io = socket.listen...
 
-///// PORT
-const port = process.env.PORT || 8080;
+
 
 ///// FAVICON
 app.use(favicon(__dirname + '/public/img/logophotoshop.png'));
 
 ///// PARSER
 app.use(bodyParser.urlencoded({ extended: false }));
-app.set('view engine', 'pug');
 app.set('view engine', 'hbs');
+app.set('view engine', 'pug');
 app.use('/public', express.static(join(__dirname, 'public')));
+app.use(cookieParser());
 
 ///// ROUTES
-const { home, signup, login, checkpoint, profil, logout } = require('./routage/index');
+const { home, signup, login, checkpoint, profil, chat } = require('./routage/index');
 
 app.use('/', home);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/checkpoint', checkpoint);
 app.use('/profil', profil);
-app.use('/logout', logout);
+app.use('/chat', chat);
+
 
 app.get('/ajax', function(req, res){
     res.render('ajax.pug', {title: 'Un exemple AJAX'})
@@ -80,6 +84,14 @@ app.use(function(req, res, next){
     box = {};
     next();
 });
+
+///// WEBSOCKETS
+io.on('connection', function(socket){ 
+    console.log('a user connected');
+    socket.on('disconnect', function(){
+        console.log('user disconnected');
+    }); 
+}); 
 
 /////DB
 MongoClient.connect(mongoUri, {
@@ -97,8 +109,6 @@ MongoClient.connect(mongoUri, {
 })
 
 ///// ERROR
-
-///// WEBSOCKETS
 
 
 
