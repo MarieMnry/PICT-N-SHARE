@@ -4,15 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <script src='public/js/script.js'></script>
-  <link rel='stylesheet' href='public/css/style.css'>
-  <script src='/socket.io/socket.io.js'></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <script src='public/js/script.js'></script>
+  <link rel='stylesheet' href='public/css/style.css'>
+  <script src='/socket.io/socket.io.js'></script>
   <title>PICT'N'Share - Social Media</title>
 </head>
 
@@ -40,7 +40,6 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon profil : {{login}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/checkpoint">Modifier mon mot de passe</a>
             <a class="dropdown-item" id="btnLogout" href="#">Déconnexion</a>
           </div>
         </li>
@@ -52,16 +51,22 @@
     </div>
   </nav>
 
+  <div class="alert alert-success col-md-6" role="alert" id="alert">
+    <strong>{{text}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 {{!---- PAGE PROFIL CONTENT ----}}
   <table class="table table-dark col-md-2" id="infosContent">
   <thead>
     <tr>
-      <th style="text-transform:uppercase;padding-left:110px;" colspan="2">{{login}}</th>
+      <th style="text-transform:uppercase;padding-left:110px;" colspan="2">{{login}} - Mes infos :</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Pseudo</th>
+      <th>Pseudo</th>
       <td>{{login}}</td>
     </tr>
     <tr>
@@ -71,23 +76,23 @@
     <form action="/profil" method="post" id="myForm">
     <tr>
       <th scope="row">Prénom</th>
-      <td><input type="text" name="prenom" id="prenom"></td>
+      <td><input required="" type="text" name="prenom" id="prenom"></td>
     </tr>
     <tr>
       <th scope="row">Nom</th>
-      <td><input type="text" name="nom" id="nom"></td>
+      <td><input required="" type="text" name="nom" id="nom"></td>
     </tr>
     <tr>
       <th scope="row">Genre</th>
-      <td><input type="text" name="sexe" id="sexe"></td>
+      <td><input required="" type="text" name="sexe" id="sexe"></td>
     </tr>
     <tr>
       <th scope="row">Age</th>
-      <td><input type="number" name="age" id="age"></td>
+      <td><input required="" type="number" name="age" id="age"></td>
     </tr>
     <tr>
       <th scope="row">Ville</th>
-      <td><input type="text" name="ville" id="ville"></td>
+      <td><input required="" type="text" name="ville" id="ville"></td>
     </tr>
     <tr>
       <th scope="row">Photo</th>
@@ -95,7 +100,7 @@
       </td>
     </tr>
     <tr>
-      <th scope="row"><button type="submit" id="button">Ajouter</button></th>
+      <th colspan="2"><button style="margin-left: 25%;width:50%;background-color:darkslategray;color:#fcfc9c;" type="submit" id="button">Ajouter</button></th>
       </form>
     </tr>
   </tbody>

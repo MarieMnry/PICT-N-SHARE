@@ -14,26 +14,39 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Chat instantané
-    $(function () { 
-      $('form').submit(function(e){
-        e.preventDefault(); // pas de rechargement de la page
+    // $(function () { 
+    //   $('form').submit(function(e){
+    //     e.preventDefault(); // pas de rechargement de la page
 
-        var message = {
-          text: $('#mssgInput').val()
-        }
-        socket.emit('chatMessage', message);
-        $('#mssgInput').val('');
-        if (message.text.trim().length !== 0) { // Gestion message vide
-          socket.emit('chatMessage', message);
-        }
-        $('#chatContent input').focus();
-      }); 
+    //     var message = {
+    //       text: $('#mssgInput').val()
+    //     }
+    //     socket.emit('chatMessage', message);
+    //     $('#mssgInput').val('');
+    //     if (message.text.trim().length !== 0) { // Gestion message vide
+    //       socket.emit('chatMessage', message);
+    //     }
+    //     $('#chatContent input').focus();
+    //   }); 
           
-      socket.on('chatMessage', function(message){
-        $('#mssgBox').append($('<li>').text(message.text));
-      });
-    }); 
-})
+    //   socket.on('chatMessage', function(message){
+    //     $('#mssgBox').append($('<li>').text(message.text));
+    //   });
+    // });
+
+    //Affichage du message de confirmation page /signup sur profil
+      var alert = document.getElementById('alert');
+      var alertText = alert.innerText || alert.textContent;
+      console.log(alertText);
+      if(alertText.length < 2){
+        alert.style.display = 'none';
+      }
+});
+    
+    
+
+
+
 
 
 

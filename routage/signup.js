@@ -12,12 +12,12 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/', function(req, res){
-    // Variables
+// Variables
     const mongoUri = process.env.mongoUri || 'mongodb+srv://marie:Architecture2018@pictcluster-5bvau.mongodb.net/test?retryWrites=true&w=majority';
     const MongoClient = require('mongodb').MongoClient;
     const { login, password, passwordBis, email } = req.body;
 
-    // Connexion à la BdD
+// Connexion à la BdD
     MongoClient.connect(mongoUri, {
         useUnifiedTopology: true,
         useNewUrlParser: true,
@@ -43,9 +43,9 @@ router.post('/', function(req, res){
                         req.session.login = login;
                         req.session.email = email;
                         console.log('from login :' + req.session.login);
-                        res.redirect('profil');
+                        res.render('profil.hbs', {text: "Inscription confirmée."});
                         
-                        // Envoi d'un mail de confirmation d'inscription
+// Envoi d'un mail de confirmation d'inscription
                         var mailOptions = {
                         from: '"Admin" <pictnshare@gmail.com>',
                         to: req.body.email,

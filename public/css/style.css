@@ -1,14 +1,21 @@
 body{
     background-image: radial-gradient(circle at center, white, grey, black);
 }
-h1 {
+h1, h3 {
     color: #fcfc9c;
     text-align: center;
     background-color: black;
     margin-top: 15px;
 }
-h3 {
+h4 {
+    margin: auto;
+    color: darkslategray;
+    text-decoration: underline overline #fcfc9c;
+    font-size: 1.2em;
     text-align: center;
+}
+.alert {
+    margin: auto;
 }
 /******** NAVBAR ********/
 .navbar-dark .navbar-nav .active .nav-link {
@@ -18,45 +25,71 @@ h3 {
 .navbar-dark .navbar-nav .active .nav-link:hover {
     background-color: dimgray;
 }
-.nav-link {
-    margin: auto;
-}
 .navbar-brand{
     margin-left: 10px;
 }
 .navbar-brand img {
     margin-right: 10px;
 }
-
+.nav-link {
+    margin: auto;
+}
+.navbar-nav {
+    padding-bottom: 0px;
+}
 /******** CARROUSEL ********/
 .carrousel {
-    width: 60%;
-    /* margin-right: 2%; */
+    width: 55%;
     margin-top: 2%;
-    /* margin: auto; */
+    margin-left: 140px;
+    border: white 1px solid;
+    border-radius: 6px;
     display: inline-block;
 }
-.legend {
-    color: white;
-    background: rgba(0,0,0, 0.2) 
+.carrousel img{
+    border-radius: 6px;
 }
-
 /******** TEXTE PAGE D'ACCUEIL ********/
 #textAccueil {
     border: 1px black solid;
-    width: 12%;
+    width: 17%;
+    background-color: grey;
     display: inline-block;
-    height: 60%;
-    margin-top: 2%;
-    margin-left: 3%;
-    margin-right: 3%;
+    height: 30%;
+    margin-top: 3%;
+    margin-left: 8%;
+    padding-top: 6px;
+    padding-left: 23px;
     vertical-align: top;
+    overflow: hidden;
+    border-radius: 10px 30px;
 }
 #textAccueil p {
     font-size: 1.7em;
     color: white;
 }
-
+#textAccueil2 {
+    border: 1px black solid;
+    width: 17%;
+    background-color: grey;
+    display: inline-block;
+    height: 30%;
+    margin-top: -15%;
+    margin-left: 8%;
+    padding-top: 14px;
+    padding-left: 23px;
+    vertical-align: top;
+    overflow: hidden;
+    border-radius: 30px 10px;
+}
+#textAccueil2 p {
+    font-size: 1.7em;
+    color: white;
+}
+.legend {
+    color: white;
+    background: rgba(0,0,0, 0.2) 
+}
 /******** FORMS ********/
 #logo{
     width: 10%;
@@ -118,13 +151,6 @@ h3 {
 input:valid {
     border: 2px solid green;
 }
-.mssgInformation {
-    margin: auto;
-    color: #fcfc9c;
-    border-bottom: white 1px dotted;
-    font-size: 1.2em;
-    text-align: center;
-}
 
 /******** PAGE PROFIL ********/
 .nav-item, .form-inline  {
@@ -133,9 +159,14 @@ input:valid {
     padding: 0px;
 }
 #infosContent {
-    margin-top: 60px;
-}
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 40%;
 
+}
+#infosContent th{
+    background-color: grey;
+}
 /******** PAGE CHAT ********/
 #chatContent {
     border:2px solid #000;
@@ -143,16 +174,12 @@ input:valid {
     margin:auto;
     height: 60%;
     background-color: aliceblue;
-}
-#chatContent ul{
-    border-bottom:2px solid #000;
+    /* position: fixed; */
 }
 #chatContent form {
     margin-left: 15%;
     margin-top: 285px;
     width:70%;
-    padding-bottom:3%;
-    /* vertical-align: bottom; */
 }
 #mssgInput {
     width:75%;
