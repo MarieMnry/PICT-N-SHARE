@@ -91,10 +91,9 @@ io.on('connection', function(socket){
         console.log('user disconnected');
     }); 
 
-    
-    socket.on('chatMessage', function(message){
-        console.log('message :' + message.text);
-        io.emit('chatMessage', message);
+    socket.on('chat message', function(msg){
+        io.emit('chat message', msg);
+        console.log('message :' + msg);
     });
 }); 
 

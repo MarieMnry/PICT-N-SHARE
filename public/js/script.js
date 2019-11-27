@@ -14,25 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Chat instantané
-    // $(function () { 
-    //   $('form').submit(function(e){
-    //     e.preventDefault(); // pas de rechargement de la page
+      $('form').submit(function(){
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        $('#mssgBox').append($('<li>').text(msg));
+      });
 
-    //     var message = {
-    //       text: $('#mssgInput').val()
-    //     }
-    //     socket.emit('chatMessage', message);
-    //     $('#mssgInput').val('');
-    //     if (message.text.trim().length !== 0) { // Gestion message vide
-    //       socket.emit('chatMessage', message);
-    //     }
-    //     $('#chatContent input').focus();
-    //   }); 
-          
-    //   socket.on('chatMessage', function(message){
-    //     $('#mssgBox').append($('<li>').text(message.text));
-    //   });
-    // });
+
+  // $('form').submit(function(e) {
+	//   e.preventDefault(); // On évite le recharchement de la page lors de la validation du formulaire
+  //   // On crée notre objet JSON correspondant à notre message
+	//   var message = {
+	// 	  text : $('#m').val()
+	//   }
+	//   socket.emit('chat-message', message); // On émet l'événement avec le message associé
+  //   $('#m').val(''); // On vide le champ texte
+  //   if (message.text.trim().length !== 0) { // Gestion message vide
+  //     socket.emit('chat-message', message);
+  //   }
+  //   $('#chatContent input').focus(); // Focus sur le champ du message
+  //   socket.on('chat-message', function (message) {
+  //     $('#mssgBox').append($('<li>').text(message.text));
+  //   });
+  // });
 
     //Affichage du message de confirmation page /signup sur profil
       var alert = document.getElementById('alert');

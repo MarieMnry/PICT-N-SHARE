@@ -161,14 +161,26 @@ input:valid {
 #infosContent {
     margin-top: 10px;
     border-radius: 5px;
-    width: 40%;
-
+    width: 30%;
+    /* display: block; */
 }
 #infosContent th{
     background-color: grey;
 }
+#postContent {
+    width: 40%;
+    background-color: #8c8c8c;
+    display: block;
+    margin-left: 600px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#postContent h2 {
+    background-color: ghostwhite;
+    border-radius: 5px;
+}
 /******** PAGE CHAT ********/
-#chatContent {
+#chat {
     border:2px solid #000;
     width:45%;
     margin:auto;
@@ -176,7 +188,7 @@ input:valid {
     background-color: aliceblue;
     /* position: fixed; */
 }
-#chatContent form {
+#chat form {
     margin-left: 15%;
     margin-top: 285px;
     width:70%;
@@ -194,11 +206,11 @@ input:valid {
     width:23%;
     background-image:-webkit-linear-gradient(bottom,#fcfc9c, grey)
 }
-section#chatContent #mssgBox li {
+section#chat #mssgBox li {
     padding: 5px 10px;
     background-color: white;
 }
-section#chatContent #mssgBox li:nth-child(odd) {
+section#chat #mssgBox li:nth-child(odd) {
     background-color: grey;
 }
 /******** RESPONSIVE ********/
